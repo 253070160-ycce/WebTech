@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+<student>
+<id>101</id>
+<name>Data Singh</name>
+<department>IT</department>
+<cgpa>7.8</cgpa>
+<email>data.singh@example.com</email>
+</student>
+<student>
+<id>102</id>
+<name>gitpull sharma</name>
+<department>CT</department>
+<cgpa>9.2</cgpa>
+<email>gitpull.sharma@example.com</email>
+</student>
+</students>

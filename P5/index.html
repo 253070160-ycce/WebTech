@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <button onclick="getSecondStudent()">Get Second Student's Info</button>
+    
+    <h2>Second Student's Data:</h2>
+    <div id="second-student-info"></div>
+
+
+    <script>
+        function loadXML() {
+            return fetch('students.xml')
+                .then(response => response.text())
+                .then(str => {
+                    const parser = new DOMParser();
+                    return parser.parseFromString(str, "application/xml");
+                });
+        }
+        function getSecondStudent() {
+            loadXML().then(xmlDoc => {
+                const students = xmlDoc.getElementsByTagName("student");
+                
+                if (students.length >= 2) {
+                    const secondStudent = students[1]; 
+
+                    const id = secondStudent.getElementsByTagName("id")[0].textContent;
+                    const name = secondStudent.getElementsByTagName("name")[0].textContent;
+                    const department = secondStudent.getElementsByTagName("department")[0].textContent;
+                    const cgpa = secondStudent.getElementsByTagName("cgpa")[0].textContent;
+                    const email = secondStudent.getElementsByTagName("email")[0].textContent;
+
+                    document.getElementById("second-student-info").innerHTML = `
+                        <p><strong>ID:</strong> ${id}</p>
+                        <p><strong>Name:</strong> ${name}</p>
+                        <p><strong>Department:</strong> ${department}</p>
+                        <p><strong>cgpa:</strong> ${cgpa}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                    `;
+                } else {
+                    alert("There are less than 2 students in the data.");
+                }
+            }).catch(err => {
+                console.error("Error loading XML file:", err);
+            });
+        }
+    </script>
+
+</body>
+</html>
