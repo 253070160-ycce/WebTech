@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Form</title>
+</head>
+<body>
+  <h1>Student Form</h1>
+  <form action="/submit" method="POST">
+    <label>ID: <input type="number" name="id" required></label><br><br>
+    <label>Name: <input type="text" name="name" required></label><br><br>
+    <label>Department:
+      <select name="department" required>
+        <option value="">Select</option>
+        <option value="IT">IT</option>
+        <option value="CT">CT</option>
+        <option value="CSE">CSE</option>
+      </select>
+    </label><br><br>
+    <label>CGPA: <input type="number" name="cgpa" step="0.1" min="0" max="10" required></label><br><br>
+    <label>Email: <input type="email" name="email" required></label><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
 
