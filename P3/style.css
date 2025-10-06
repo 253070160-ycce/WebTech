@@ -1,0 +1,11 @@
+h3 {
+  color: green;
+  text-align: right;
+  text-decoration: underline;
+}
+
+p.external {
+  color: purple;
+  font-style: italic;
+}
+
