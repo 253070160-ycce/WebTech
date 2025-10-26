@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lalala</title>
+  </head>
+  <body>
+    Enter a no:
+    <input type="text" id="num1" />
+    <button onclick="print()">Print</button>
+    <p id="op1"></p>
+
+    Enter another no:
+    <input type="text" id="num2" />
+    <button onclick="fact()">Calc Factorial</button>
+    <p id="op2"></p>
+    Enter no 1:
+    <input type="text" id="n1">
+    Enter no 2:
+    <input type="text" id="n2">
+    Enter no 3:
+    <input type="text" id="n3">
+    <button onclick="bo3()">Find Biggest of 3</button> 
+    <p id="op3"></p>
+    <script>
+      function bo3() {
+        var n1 = Number(document.getElementById("n1").value);
+        var n2 = Number(document.getElementById("n2").value);
+        var n3 = Number(document.getElementById("n3").value);
+        var op = document.getElementById("op3");
+        if (n1 > n2 && n1 > n2) {
+          op.innerText = "N1 "+n1+" is greatest";
+        } else if (n2 > n3) {
+          op.innerText = "N2 "+n2+" is greatest";
+        } else {
+          op.innerText = "N3 "+n3+" is greatest";
+        }
+      }
+      function print() {
+        var n = document.getElementById("num1").value;
+        var op = document.getElementById("op1");
+        if (n <= 0) {
+          op.innerHTML = "Invalid Input";
+        } else {
+          var str = "";
+          for (var i = 1; i <= n; i++) {
+            str += i + " ";
+          }
+          op.innerHTML = str;
+        }
+      }
+
+      function fact() {
+        var n = document.getElementById("num2").value;
+        var op = document.getElementById("op2");
+        if (n < 0) {
+          op.innerHTML = "Invalid Input";
+        } else {
+          var f = 1;
+          while (n > 1) {
+            f *= n;
+            n--;
+          }
+          op.innerHTML = "factorial: " + f;
+        }
+      }
+     </script> 
+  </body>
+</html>
