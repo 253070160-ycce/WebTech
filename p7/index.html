@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations & Dialogue Boxes</title>
+</head>
+<body>
+    <script>
+
+        alert("Welcome");
+
+
+        var proceed = confirm("Do you want to perform arithmetic operations?");
+        if (proceed) {
+
+            var num1 = Number(prompt("Enter the first number:"));
+            var num2 = Number(prompt("Enter the second number:"));
+
+            var add = num1 + num2;
+            var sub = num1 - num2;
+            var mul = num1 * num2;
+            var div = num1 / num2;
+            var mod = num1 % num2;
+
+            var res =
+                "Result:\n" +
+                "Addition: " + add + "\n" +
+                "Subtraction: " + sub + "\n" +
+                "Multiplication: " + mul + "\n" +
+                "Division: " + div + "\n" +
+                "Modulus: " + mod;
+
+            alert(res);
+        } else {
+            alert("Goodbye!");
+        }
+    </script>
+</body>
+</html>
